@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s ease;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.hero {
+    height: 100vh;
+    background: url('../images/avatar.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+.about {
+    padding: 60px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.skills {
+    padding: 60px 0;
+    background: #f4f4f4;
+}
+
+.skills .skill {
+    margin: 20px 0;
+}
+
+.progress {
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 20px;
+    background: #4caf50;
+    width: 0;
+    transition: width 1s ease;
+}
+
+.projects {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.experience, .education {
+    padding: 60px 0;
+    background: #f4f4f4;
+}
+
+.contact {
+    padding: 60px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact button {
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background: #45a049;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .hero {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
