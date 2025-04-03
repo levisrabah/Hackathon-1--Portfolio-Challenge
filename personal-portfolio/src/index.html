@@ -6,6 +6,8 @@
     <meta name="description" content="Levis Rabah - Full-Stack Developer | Telecommunications & IT Portfolio">
     <title>Levis Rabah - Portfolio</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -39,7 +41,27 @@
 
         <!-- Other Sections -->
         <section id="about"></section>
-        <section id="skills"></section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <h3>Python</h3>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <h3>React.js</h3>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+            </div>
+        </section>
         <section id="projects"></section>
 
         <!-- Experience Section -->
@@ -73,8 +95,11 @@
             <h2>Contact Me</h2>
             <form id="contact-form">
                 <input type="text" id="name" placeholder="Your Name" required>
+                <span class="error-message">Name is required</span>
                 <input type="email" id="email" placeholder="Your Email" required>
+                <span class="error-message">Valid email is required</span>
                 <textarea id="message" placeholder="Your Message" required></textarea>
+                <span class="error-message">Message is required</span>
                 <button type="submit">Submit</button>
             </form>
             <div class="social-links">

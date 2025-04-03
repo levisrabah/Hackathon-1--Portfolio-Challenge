@@ -29,15 +29,25 @@ document.addEventListener("DOMContentLoaded", function() {
     if (contactForm) {
         contactForm.addEventListener("submit", function(e) {
             e.preventDefault();
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const message = document.getElementById("message").value;
+            let isValid = true;
 
-            if (name && email && message) {
-                alert("Form submitted successfully!");
+            // Validate each field
+            const fields = ["name", "email", "message"];
+            fields.forEach(field => {
+                const input = document.getElementById(field);
+                const error = input.nextElementSibling;
+
+                if (!input.value.trim()) {
+                    error.style.display = "block";
+                    isValid = false;
+                } else {
+                    error.style.display = "none";
+                }
+            });
+
+            if (isValid) {
+                alert("Message sent successfully!");
                 contactForm.reset();
-            } else {
-                alert("Please fill in all fields.");
             }
         });
     }
@@ -75,3 +85,27 @@ document.addEventListener("DOMContentLoaded", function() {
     loadComponent("education", "components/education.html");
     loadComponent("contact", "components/contact.html");
 });
+
+// Animate progress bars on scroll
+const animateProgressBars = () => {
+    const progressBars = document.querySelectorAll('.progress-bar');
+    progressBars.forEach(bar => {
+        bar.style.width = '0';
+        const targetWidth = bar.getAttribute('style').match(/\d+/)[0];
+        setTimeout(() => {
+            bar.style.width = `${targetWidth}%`;
+        }, 100);
+    });
+};
+
+window.addEventListener('scroll', () => {
+    const skillsSection = document.getElementById('skills');
+    if (isInViewport(skillsSection)) {
+        animateProgressBars();
+    }
+});
+
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.top <= window.innerHeight && rect.bottom >= 0;
+}
