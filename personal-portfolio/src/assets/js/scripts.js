@@ -84,6 +84,14 @@ document.addEventListener("DOMContentLoaded", function() {
     loadComponent("experience", "components/experience.html");
     loadComponent("education", "components/education.html");
     loadComponent("contact", "components/contact.html");
+
+    // Accordion functionality
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.parentNode;
+            item.classList.toggle('active');
+        });
+    });
 });
 
 // Animate progress bars on scroll
